@@ -1,0 +1,54 @@
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+
+TRIG_PIN = 2
+ECHO_PIN = 3
+
+LED_PIN = 4
+
+# Set up GPIO pins
+
+GPIO.setup(TRIG_PIN, GPIO.OUT)
+GPIO.setup(ECHO_PIN, GPIO.IN)
+GPIO.setup(LED_PIN, GPIO.OUT)
+
+def get_distance():
+
+# Send a pulse to the ultrasonic sensor
+
+    GPIO.output(TRIG_PIN, GPIO.HIGH)
+    time.sleep(0.01)
+    GPIO.output(TRIG_PIN, GPIO.LOW)
+
+# Measure the time it takes for the pulse to return
+
+    while GPIO.input(ECHO_PIN) == 0:
+        pulse_start = time.time()
+    while GPIO.input(ECHO_PIN) == 1:
+        pulse_end = time.time()
+
+# Calculate the distance
+
+    pulse_duration = pulse_end - pulse_start
+    distance = pulse_duration * 34000 / 2
+    return distance
+
+try:
+    while True:
+# Get the distance from the ultrasonic sensor
+        distance = get_distance()
+
+ # If the distance is less than 20cm, turn on the LED
+        if distance < 20:
+            GPIO.output(LED_PIN, GPIO.HIGH)
+        else:
+            GPIO.output(LED_PIN, GPIO.LOW)
+
+ # Wait for 0.5 seconds before taking the next reading
+        time.sleep(0.5)
+
+except KeyboardInterrupt:
+# Clean up GPIO on exit
+    GPIO.cleanup()

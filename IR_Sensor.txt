@@ -1,0 +1,19 @@
+import RPi.GPIO as GPIO
+import time
+GPIO.setmode(GPIO.BCM)
+
+ir_pin=2
+GPIO.setup(ir_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+count=0
+
+try:
+    while True:
+        sensor_state=GPIO.input(ir_pin)
+        if sensor_state==False:
+                 count+=1
+                 Print(f"Toal {count} Person Enter In The Room.")
+                 time.sleep(1)
+                 time.sleep(0.1)
+
+except KeyboardInterrept:
+     GPIO.cleanup()
