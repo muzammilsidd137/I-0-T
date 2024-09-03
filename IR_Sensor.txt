@@ -11,9 +11,9 @@ try:
         sensor_state=GPIO.input(ir_pin)
         if sensor_state==False:
                  count+=1
-                 Print(f"Toal {count} Person Enter In The Room.")
+                 print(f"Toal {count} Person Enter In The Room.")
                  time.sleep(1)
                  time.sleep(0.1)
 
-except KeyboardInterrept:
+except KeyboardInterrupt:
      GPIO.cleanup()
