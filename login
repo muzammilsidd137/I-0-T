@@ -123,4 +123,13 @@ public class Conn
         }
     }
 }
+/////////////////////////////////////////////////////////////////////////////////////
 
+create database simplelogin;
+
+show databases;
+use simplelogin;
+
+create table login(username varchar(20),password varchar(20));
+
+insert into login  values('aashish','1234');
