@@ -1,0 +1,75 @@
+question 1 Start a TCP application and monitor the packet flow. Make necessary assumptions.
+
+
+answer 1  Aim:
+        To start a TCP application and monitor the packet flow between a client and a server.
+
+Assumptions:
+
+Two systems are connected through a network.
+One system acts as the TCP Server and the other as the TCP Client.
+Wireshark (or any packet analyzer) is used to monitor the packets.
+
+Procedure:
+
+Start the TCP Server application.
+Start the TCP Client application.
+Establish a TCP connection between the client and server.
+Exchange data (for example, send a text message).
+Capture the network traffic using Wireshark.
+Observe the TCP packets such as SYN, SYN-ACK, ACK, data packets, and FIN during connection termination.
+
+Observation:
+
+TCP connection is established using the three-way handshake.
+Data packets are transmitted reliably with acknowledgements.
+The connection is terminated using FIN and ACK packets.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+question 2    Create a UDP client on a node nl and a UDP server on a node n2.
+
+Aim:
+To create a UDP client on node n1 and a UDP server on node n2.
+
+Procedure:
+
+Create two nodes named n1 and n2.
+Attach a UDP Agent to node n1.
+Attach a Null Agent (UDP Server) to node n2.
+Connect the UDP client with the UDP server.
+Attach a CBR (Constant Bit Rate) traffic source to the UDP client.
+Start the simulation and observe the packet transmission.
+
+Observation:
+
+The UDP client sends packets from n1 to n2.
+The UDP server receives the packets.
+UDP is a connectionless protocol and does not require acknowledgements.
+Packet delivery is faster but not guaranteed.
+
+Result:
+The UDP client was successfully created on node n1, and the UDP server was successfully created on node n2. Data packets were transmitted successfully between the two nodes.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+quetion no b1 Create an EXCEL file. Convert the EXCEL file to .csv format and prepare it
+as arff file. Make necessary assumptions.
+
+
+Excel file banana ✅
+Excel ko CSV format me convert karna ✅
+CSV ko WEKA me load karke ARFF format me save karna ✅
+ARFF file ka output dikhana ✅
+
+Agar practical exam me likh rahe ho to answer sheet me ye zarur add karna:
+
+Aim
+Assumptions
+Procedure/Steps
+ARFF format
+Observation
+Result
+
